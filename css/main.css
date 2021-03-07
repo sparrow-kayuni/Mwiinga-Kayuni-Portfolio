@@ -4,23 +4,31 @@
 
 @font-face{
 	font-family: "BigShoulders";
-	src: url(https://mwiingakayuni.ml//fonts/BigShouldersText-Regular.ttf);
+	src: url(https://mwiingakayuni.ml//fonts/BigShouldersText-Regular.ttf),
+		url(file:///C:/Users/Mwiinga/Python/Web/MK%20Portfolio/fonts/BigShouldersText-Regular.ttf);
 }
 
 @font-face{
 	font-family: "BigShoulders-Bold";
-	src: url(https://mwiingakayuni.ml//fonts/BigShouldersText-Bold.ttf);
+	src: url(https://mwiingakayuni.ml//fonts/BigShouldersText-Bold.ttf),
+		url(file:///C:/Users/Mwiinga/Python/Web/MK%20Portfolio/fonts/BigShouldersText-Bold.ttf);
 }
 
 @font-face{
 	font-family: "Abel";
-	src: url(https://mwiingakayuni.ml//fonts/Abel-Regular.ttf);
+	src: url(https://mwiingakayuni.ml//fonts/Abel-Regular.ttf),
+		url(file:///C:/Users/Mwiinga/Python/Web/MK%20Portfolio/fonts/Abel-Regular.ttf);
 }
 
+*::selection{
+	background-color: black;
+	color: #FFF4E0;
+}
 
 body{
 	font-family: "Abel";
 	font-size: 1.5em;
+	overflow-x: hidden;
 }
 
 a,
@@ -48,7 +56,7 @@ a:hover{
 	left: 0;
 	height: 100vh;
 	width: 100vw;
-	background-color: #ffa50010;
+	background-color: #FFF4E0;
 }
 
 .nav{
@@ -87,35 +95,47 @@ a:hover{
 }
 
 .links > *{
-	flex: 1 1 3em;
+	flex: 0.2 1 3em;
 }
 
 .content{
-	position: absolute;
+	position: relative;
 	border-radius: 5px;
 	z-index: 1;
 	background-color: transparent;
-	top: 50vh;
+	top: 20vh;
 	left: 50%;
 	transform: translate(-50%, 0);
 	width: 100vw;
 	max-width: 720px;
 }
 
+.content > *{
+	position: relative;
+} 
+
+img{
+	left: 50%;
+	transform: translateX(-50%);
+}
 
 .header{
 	font-family: "BigShoulders-Bold";
-	font-size: 1.8em;
+	font-size: calc(5vw + 1em);
 	color: grey;
 	text-align: center;
 	letter-spacing: 0.05em;
+	bottom: 0.1em;
 }
 
 .header > h1::after{
 	content: '';
 	display: block;
 	width: auto;
-	height: 2px;
-	background-color: #ffa500b0;
+	height: 0.1em;
+	background-color: #ffa500a0;
 }
+
+
+
 
