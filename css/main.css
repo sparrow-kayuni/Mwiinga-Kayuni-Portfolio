@@ -4,20 +4,20 @@
 
 @font-face{
 	font-family: "BigShoulders";
-	src: url(https://mwiingakayuni.ml//fonts/BigShouldersText-Regular.ttf),
-		url(file:///C:/Users/Mwiinga/Python/Web/MK%20Portfolio/fonts/BigShouldersText-Regular.ttf);
+	src: url(https://mwiingakayuni.ml/fonts/BigShouldersText-Regular.ttf);/*,
+		url(file:///C:/Users/Mwiinga/Python/Web/MK%20Portfolio/fonts/BigShouldersText-Regular.ttf);*/
 }
 
 @font-face{
 	font-family: "BigShoulders-Bold";
-	src: url(https://mwiingakayuni.ml//fonts/BigShouldersText-Bold.ttf),
-		url(file:///C:/Users/Mwiinga/Python/Web/MK%20Portfolio/fonts/BigShouldersText-Bold.ttf);
+	src: url(https://mwiingakayuni.ml/fonts/BigShouldersText-Bold.ttf)/*,
+		url(file:///C:/Users/Mwiinga/Python/Web/MK%20Portfolio/fonts/BigShouldersText-Bold.ttf);*/
 }
 
 @font-face{
 	font-family: "Abel";
-	src: url(https://mwiingakayuni.ml//fonts/Abel-Regular.ttf),
-		url(file:///C:/Users/Mwiinga/Python/Web/MK%20Portfolio/fonts/Abel-Regular.ttf);
+	src: url(https://mwiingakayuni.ml/fonts/Abel-Regular.ttf);/*,
+		url(file:///C:/Users/Mwiinga/Python/Web/MK%20Portfolio/fonts/Abel-Regular.ttf);*/
 }
 
 *::selection{
@@ -33,7 +33,7 @@ body{
 
 a,
 a:visited{
-	color: grey;
+	color: rgb(100,100,100);
 	text-decoration: none;
 	transition: all 250ms ease-in;
 	letter-spacing: 0.01em;
@@ -57,7 +57,11 @@ a:hover{
 	left: 0;
 	height: 100vh;
 	width: 100vw;
-	background-color: #FFF4E0;
+	background-color: #FFF4E0D4;
+	background-image: url(https://mwiingakayuni.ml//images/background_texture.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-blend-mode: hue;
 }
 
 .nav{
@@ -106,7 +110,7 @@ a:hover{
 
 .logo > a:active{
 	transform: scale(0.95);
-	background-color: black;
+	background-color: #0a5d79dd;
 }
 
 
@@ -157,7 +161,7 @@ img{
 .header{
 	font-family: "BigShoulders-Bold";
 	font-size: calc(5vw + 1em);
-	color: grey;
+	color: rgb(100, 100, 100);
 	text-align: center;
 	letter-spacing: 0.05em;
 	bottom: 0.1em;
