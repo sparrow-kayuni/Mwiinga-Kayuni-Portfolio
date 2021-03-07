@@ -33,20 +33,21 @@ body{
 
 a,
 a:visited{
-	color: #505050;
+	color: grey;
 	text-decoration: none;
 	transition: all 250ms ease-in;
 	letter-spacing: 0.01em;
+	transform: scale(1);
 }
 
 a:active{
-	letter-spacing: 0.005em;
+	transform: scale(0.95);
 }
 
 a:hover{
 	color: black;
 	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
-	letter-spacing: 0.02em;
+	transform: scale(1.05);
 }
 
 .fixed-background{
@@ -80,11 +81,45 @@ a:hover{
 	padding: 1em 1em 1em 1em;
 	flex: 1 1 3em;
 }
-
-
 .logo{
-	
+	display: flex;
+	justify-content: center;
 }
+
+.logo > a{
+	display: block;
+	width: 75px;
+	height: 75px;
+	background-color: transparent;
+	border-radius: 37.5px;
+	box-shadow: 0px 0px 5px 1px black;
+	transform: scale(1);
+	transition: 
+		all 250ms ease-out;
+}
+
+.logo > a:hover{
+	transform: scale(1.05);
+	background-color: #0a5d79dd;
+	box-shadow: 0px 0px 10px 1px black;
+}
+
+.logo > a:active{
+	transform: scale(0.95);
+	background-color: black;
+}
+
+
+.logo-icon{
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: block;
+	width: 75px;
+}
+
+
 
 .links{
 	flex: 1 1 6em;
@@ -135,7 +170,3 @@ img{
 	height: 0.1em;
 	background-color: #ffa500a0;
 }
-
-
-
-
