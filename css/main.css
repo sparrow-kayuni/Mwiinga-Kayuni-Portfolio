@@ -1,177 +1,245 @@
-.root{
-
+:root{
+	--bg-dark-grey: #1f1f1f;
+	--bg-mid-grey: #333333;
+	--bg-light-grey: #666666;
+	--accent-orange: #f98c42;
+	--bg-gradient: linear-gradient(to bottom, var(--bg-dark-grey), var(--bg-mid-grey), var(--bg-light-grey));
 }
 
-@font-face{
-	font-family: "BigShoulders";
-	src: url(https://mwiingakayuni.ml/fonts/BigShouldersText-Regular.ttf);/*,
-		url(file:///C:/Users/Mwiinga/Python/Web/MK%20Portfolio/fonts/BigShouldersText-Regular.ttf);*/
+@font-face {
+	font-family: 'Trebuchet MS';
+	font-style: normal;
+	font-weight: normal;
+	src:url('file:///C:/Users/Mwiinga/Python/Web/MK%20Portfolio/fonts/trebuc.woff') format('woff');
 }
 
-@font-face{
-	font-family: "BigShoulders-Bold";
-	src: url(https://mwiingakayuni.ml/fonts/BigShouldersText-Bold.ttf)/*,
-		url(file:///C:/Users/Mwiinga/Python/Web/MK%20Portfolio/fonts/BigShouldersText-Bold.ttf);*/
-}
-
-@font-face{
-	font-family: "Abel";
-	src: url(https://mwiingakayuni.ml/fonts/Abel-Regular.ttf);/*,
-		url(file:///C:/Users/Mwiinga/Python/Web/MK%20Portfolio/fonts/Abel-Regular.ttf);*/
+*{
+	scroll-behavior: smooth;
 }
 
 *::selection{
-	background-color: black;
-	color: #FFF4E0;
+	color: var(--bg-mid-grey);
+	background-color: white;
 }
-
 body{
-	font-family: "Abel";
-	font-size: 1.5em;
+	margin: 0;
+}
+.site{
+	font-family: 'Trebuchet MS', sans-serif;
 	overflow-x: hidden;
 }
 
-a,
-a:visited{
-	color: rgb(100,100,100);
-	text-decoration: none;
-	transition: all 250ms ease-in;
-	letter-spacing: 0.01em;
-	transform: scale(1);
+h1, 
+h2,
+h3,
+h4{
+	margin: 0;
 }
 
-a:active{
-	transform: scale(0.95);
-}
 
-a:hover{
-	color: black;
-	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
-	transform: scale(1.05);
-}
-
-.fixed-background{
-	position: fixed;
-	z-index: -1;
-	top: 0;
+.landing{
+	position: relative;
 	left: 0;
+	top: 0;
 	height: 100vh;
-	width: 100vw;
-	background-color: #FFF4E0D4;
-	background-image: url(https://mwiingakayuni.ml//images/background_texture.jpg);
-	background-size: cover;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--bg-gradient);
+	overflow: hidden;
+}
+
+.bg-logo{
+	display: block;
+	height: 30em;
+	width: 40em;
+	background-color: transparent;
+	background-image: url(file:///C:/Users/Mwiinga/Python/Web/MK%20Portfolio/images/mk_logo_black.png);
+	background-blend-mode: lighten;
+	background-size: contain;
 	background-repeat: no-repeat;
-	background-blend-mode: hue;
+	opacity: 0.1;
+	position: absolute;
+	bottom: -5em;
+	right: -5em;
+	animation: logoAnimation 120s linear infinite running;
+}
+
+.heading{
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	padding: 2em;
+	position: relative;
+}
+
+.name{
+	text-align: right;
+	font-size: calc(1.5rem + 1vw);
+	color: white;
+}
+
+.titles{
+	text-align: left;
+	font-size: calc(0.8rem + 1vw);
+	color: var(--accent-orange);
+}
+
+
+.titles>*::selection{
+	color: white;
+	background-color: var(--accent-orange);
+}
+
+@keyframes logoAnimation{
+	0%{
+		transform: rotate(0deg);
+		bottom: -25em;
+		right: -20em;
+
+	}
+	25%{
+		bottom: 20em;
+		right: 10em;
+	}
+	50%{
+		transform: rotate(360deg);
+		bottom: 50em;
+		right: -30em;
+	}
+	100%{
+		transform: rotate(0deg);
+		bottom: -25em;
+		right: -20em;
+	}
 }
 
 .nav{
-	font-family: "BigShoulders-Bold";
-	font-size: 1.75em;
-	position: relative;
-	z-index: 1;
+	color: white;
+}
+
+.navbar{
+	position: absolute;
+	bottom: 1em;
+	z-index: 1000;
 	width: 100%;
-	top:0;
-	left: 0;
-	border-bottom: 1px solid rgba(150, 150, 150, 0.5);
-	display: flex;
-	justify-content:space-between;
-	background-color: transparent;
-	flex-wrap: wrap;
-	gap: 0.3;
-}
-
-.nav > *{
-	text-align: center;
-	padding: 1em 1em 1em 1em;
-	flex: 1 1 3em;
-}
-.logo{
 	display: flex;
 	justify-content: center;
 }
 
-.logo > a{
-	display: inline-block;
-	width: 75px;
-	height: 75px;
-	background-color: transparent;
-	border-radius: 37.5px;
-	box-shadow: 0px 0px 5px 1px black;
+
+.nav-menu{
+	display: flex;
+	width: 40%;
+	max-width: 450px;
+	margin: 0;
+	padding: 1em 0;
+	justify-content: space-around;
+	list-style: none;
+	font-size: 1em;
+}
+
+.menu-item{
 	transform: scale(1);
-	transition: 
-		all 250ms ease-out;
+	transition: all 350ms ease-out;
 }
 
-.logo > a:hover{
-	transform: scale(1.05);
-	background-color: #0a5d79dd;
-	box-shadow: 0px 0px 10px 1px black;
-	border: 1px solid #0a5d79dd;
+.menu-item:hover{
+	transform: scale(1.3);
 }
 
-.logo > a:active{
-	transform: scale(0.95);
-	background-color: #0a5d79dd;
+.nav-link,
+.nav-link:visited{
+	color: inherit;
+	text-decoration: none;
 }
 
-
-.logo-icon{
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	display: inline-block;
-	width: 75px;
-}
-
-
-
-.links{
-	flex: 1 1 6em;
+.side-scroll-section{
 	display: flex;
-	justify-content: center;
-	gap: 1.5em;
-	flex-wrap: wrap;
-}
-
-.links > *{
-	flex: 0.2 1 3em;
-}
-
-.content{
 	position: relative;
-	border-radius: 5px;
-	z-index: 1;
-	background-color: transparent;
-	top: 20vh;
-	left: 50%;
-	transform: translate(-50%, 0);
-	width: 100vw;
-	max-width: 720px;
+	width: 100%;
 }
 
-.content > *{
+
+.about{
+	display: flex;
+	flex: 0 0 100%;
+	flex-direction: column;
 	position: relative;
-} 
-
-img{
-	left: 50%;
-	transform: translateX(-50%);
+	left: 0;
+	align-items:center;
+	min-height: 100vh;
+	color: white;
+	background-color: var(--bg-mid-grey);
 }
 
-.header{
-	font-family: "BigShoulders-Bold";
-	font-size: calc(5vw + 1em);
-	color: rgb(100, 100, 100);
-	text-align: center;
-	letter-spacing: 0.05em;
-	bottom: 0.1em;
+.about-heading{
+	color: var(--accent-orange);
+	font-size: calc(2rem + 1vw);
+	position: relative;
+	flex: 0 1 20%;
+	width: 80%;
+	padding: 1em;
 }
 
-.header > h1::after{
-	content: '';
+.about-description{
+	width: 55%;
+	min-width: 20ch;
+	text-align: justify;
+}
+
+.cutout-image-container{
+	position: absolute;
+	right: 0;
+	bottom: 0;
 	display: block;
-	width: auto;
-	height: 0.1em;
-	background-color: #ffa500a0;
+	height: 50%;
+	padding: 2vh 0 0 2vh;
+	opacity: 1;
+	max-width: 50%;
+}
+
+.cutout-image{
+	height: 100%;
+	width: calc(400px + 1vh);
+	object-fit: cover;
+	object-position: top;
+}
+
+@media (max-width: 500px){
+	.cutout-image{
+		width: calc(300px + 1vh);
+	}
+}
+
+.work{
+	flex: 0 0 100%;
+	display: block;
+	height: 100vh;
+	width: 100%;
+	background-color: var(--bg-light-grey);
+}
+
+.fixed{
+	position: fixed;
+	top: 0;
+	bottom: auto;
+}
+
+.one-em{
+	top: 1em;
+}
+
+.side-scroll{
+	transform: translateX(0px);
+}
+
+.highlighted{
+	color: var(--accent-orange);
+	transform: scale(1.3);
+}
+
+.highlight-nav-menu{
+	background-color: var(--bg-light-grey);
 }
