@@ -1,8 +1,10 @@
 :root{
 	--bg-dark-grey: #1f1f1f;
-	--bg-dark-grey-clear: #1f1f1ff0;
+	--bg-dark-grey-clear: #1f1f1fdd;
 	--bg-mid-grey: #333333;
+	--bg-mid-grey-clear: #333333dd;
 	--bg-light-grey: #666666;
+	--bg-light-grey-clear: #666666dd;
 	--accent-orange: #f98c42;
 	--bg-gradient: linear-gradient(to bottom, var(--bg-dark-grey), var(--bg-mid-grey), var(--bg-light-grey));
 }
@@ -138,6 +140,7 @@ h4{
 	justify-content: space-around;
 	list-style: none;
 	font-size: 1em;
+	transition: all 250ms ease-out;
 }
 
 .nav-menu-btn{
@@ -165,10 +168,6 @@ h4{
 		bottom: unset;
 		height: 60px;
 		transition: background-color 250ms ease;
-	}
-
-	.darken-background{
-		background-color: #242424;
 	}
 
 	.nav-btn-container{
@@ -297,6 +296,14 @@ h4{
 	background-color: var(--bg-light-grey);
 }
 
+.contacts{
+	flex: 0 0 100%;
+	display: block;
+	height: 100vh;
+	width: 100%;
+	background-color: var(--bg-dark-grey);
+}
+
 /* Rules that are meant to be additions to elements*/
 
 .fixed{
@@ -341,4 +348,21 @@ h4{
 .opacity-0{
 	opacity: 0;
 }
+.darken-background{
+	background-color: #242424;
+}
+.box-shadow{
+	box-shadow: 0 0 10px 1px #00000024;
+}
 
+.light-grey-background{
+	background-color: var(--bg-light-grey-clear);
+}
+
+.mid-grey-background{
+	background-color: var(--bg-mid-grey-clear);
+}
+
+.dark-grey-background{
+	background-color: var(--bg-dark-grey-clear);
+}

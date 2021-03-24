@@ -7,10 +7,6 @@ const navMenuBtnBar1 = document.querySelector(".bar1");
 const navMenuBtnBar2 = document.querySelector(".bar2");
 const navMenuBtnBar3 = document.querySelector(".bar3");
 const navLinks = document.querySelectorAll('.nav-link')
-const homeLink = document.querySelector("#home");
-const aboutLink = document.querySelector("#about-me");
-const workLink = document.querySelector("#my-work");
-const contactLink = document.querySelector("#contact-me");
 const homeTab = document.querySelector(".menu-item:nth-child(1)");
 const aboutTab = document.querySelector(".menu-item:nth-child(2)");
 const workTab = document.querySelector(".menu-item:nth-child(3)");
@@ -45,6 +41,7 @@ function showMenu(){
 		navMenuBtnBar3.classList.add("rotate-neg-45");
 		navMenuBtnBar2.classList.add("opacity-0");
 		isDropped = true;
+	
 	}else{
 		navBar.classList.remove("darken-background");
 		navMenu.classList.remove("dropped");
@@ -64,17 +61,39 @@ function onScroll(){
 }
 
 
-// Sticky Navbar function \\
+// Sticky Navbar function and changing colours\\
 function fixNavToTop(scrollPos, screenWidth, screenHeight){
 	if(screenWidth > 900){
-		if(window.scrollY >= screenHeight-100){
-			navBar.classList.add('fixed');
-			navBar.classList.add('one-em');
-		}
 		if(window.scrollY < screenHeight-100){
 			navBar.classList.remove('fixed');
 			navBar.classList.remove('one-em');
-		}
+			navMenu.classList.remove("box-shadow");
+			navMenu.classList.remove("mid-grey-background");
+			navMenu.classList.remove("light-grey-background");
+			navMenu.classList.remove("dark-grey-background");
+		
+		}else if(window.scrollY >= screenHeight-100){
+			
+			navBar.classList.add('fixed');
+			navBar.classList.add('one-em');
+			navMenu.classList.add("box-shadow");
+			
+			if(window.scrollY < screenHeight * 2){
+				navMenu.classList.add("mid-grey-background");
+				navMenu.classList.remove("light-grey-background");
+				navMenu.classList.remove("dark-grey-background");
+			}
+			if(window.scrollY >= screenHeight * 2 && window.scrollY < screenHeight * 3){
+				navMenu.classList.add("light-grey-background");
+				navMenu.classList.remove("mid-grey-background");
+				navMenu.classList.remove("dark-grey-background");
+			}
+			if(window.scrollY >= screenHeight * 3){
+				navMenu.classList.add("dark-grey-background");
+				navMenu.classList.remove("light-grey-background");
+				navMenu.classList.remove("mid-grey-background");
+			}
+		} 
 	}
 }
 
@@ -94,7 +113,6 @@ function addTabToCurrentSection(scrollPos, screenWidth, screenHeight){
 		aboutTab.classList.add("highlighted");
 		workTab.classList.remove("highlighted");
 		contactsTab.classList.remove("highlighted");
-		
 	}
 	else if(window.scrollY >= screenHeight * 2 && window.scrollY < screenHeight * 3){
 		homeTab.classList.remove("highlighted");
