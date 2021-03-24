@@ -206,7 +206,7 @@ h4{
 		z-index: -1;
 		max-width: unset;
 		background-color: var(--bg-dark-grey);
-		border-bottom: 2px solid #cecececf;
+		border-bottom: 1px solid #cecececf;
 		transition: top 500ms ease-out;
 	}
 
@@ -327,11 +327,11 @@ h4{
 }
 
 .rotate-45{
-	rotate: 45deg;
+	transform: translateY(10px) rotate(45deg);
 }
 
 .rotate-neg-45{
-	rotate: -45deg;
+	transform: translateY(-10px) rotate(-45deg);
 }
 
 .hidden{

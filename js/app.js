@@ -42,15 +42,15 @@ function showMenu(){
 		navBar.classList.add("darken-background");
 		navMenu.classList.add("dropped");
 		navMenuBtnBar1.classList.add("rotate-45");
-		navMenuBtnBar2.classList.add("rotate-neg-45");
-		navMenuBtnBar3.classList.add("hidden");
+		navMenuBtnBar3.classList.add("rotate-neg-45");
+		navMenuBtnBar2.classList.add("hidden");
 		isDropped = true;
 	}else{
 		navBar.classList.remove("darken-background");
 		navMenu.classList.remove("dropped");
 		navMenuBtnBar1.classList.remove("rotate-45");
-		navMenuBtnBar2.classList.remove("rotate-neg-45");
-		navMenuBtnBar3.classList.remove("hidden");
+		navMenuBtnBar3.classList.remove("rotate-neg-45");
+		navMenuBtnBar2.classList.remove("hidden");
 		isDropped = false;
 	}
 }
