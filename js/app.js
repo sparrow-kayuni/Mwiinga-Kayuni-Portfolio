@@ -43,14 +43,14 @@ function showMenu(){
 		navMenu.classList.add("dropped");
 		navMenuBtnBar1.classList.add("rotate-45");
 		navMenuBtnBar3.classList.add("rotate-neg-45");
-		navMenuBtnBar2.classList.add("hidden");
+		navMenuBtnBar2.classList.add("opacity-0");
 		isDropped = true;
 	}else{
 		navBar.classList.remove("darken-background");
 		navMenu.classList.remove("dropped");
 		navMenuBtnBar1.classList.remove("rotate-45");
 		navMenuBtnBar3.classList.remove("rotate-neg-45");
-		navMenuBtnBar2.classList.remove("hidden");
+		navMenuBtnBar2.classList.remove("opacity-0");
 		isDropped = false;
 	}
 }
