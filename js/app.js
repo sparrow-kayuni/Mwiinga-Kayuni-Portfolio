@@ -1,5 +1,14 @@
 const navBar = document.querySelector(".navbar");
 const navMenu = document.querySelector(".nav-menu");
+const navMenuBtn = document.querySelector(".nav-menu-btn");
+const navMenuBtnBar1 = document.querySelector(".bar1");
+const navMenuBtnBar2 = document.querySelector(".bar2");
+const navMenuBtnBar3 = document.querySelector(".bar3");
+const navLinks = document.querySelectorAll('.nav-link')
+const homeLink = document.querySelector("#home");
+const aboutLink = document.querySelector("#about-me");
+const workLink = document.querySelector("#my-work");
+const contactLink = document.querySelector("#contact-me");
 const homeTab = document.querySelector(".menu-item:nth-child(1)");
 const aboutTab = document.querySelector(".menu-item:nth-child(2)");
 const workTab = document.querySelector(".menu-item:nth-child(3)");
@@ -13,6 +22,34 @@ const cutoutImageContainer = document.querySelector(".cutout-image-container");
 
 
 window.addEventListener('scroll', onScroll);
+
+var isDropped = false;
+navMenuBtn.addEventListener('click', showMenu);
+
+for(var i=0; i < navLinks.length; i++){
+	navLinks[i].addEventListener('click', function(){
+		isDropped= true;
+		showMenu();
+	});
+}
+
+function showMenu(){
+	if(!isDropped){
+		navBar.classList.add("darken-background");
+		navMenu.classList.add("dropped");
+		navMenuBtnBar1.classList.add("rotate-45");
+		navMenuBtnBar2.classList.add("rotate-neg-45");
+		navMenuBtnBar3.classList.add("hidden");
+		isDropped = true;
+	}else{
+		navBar.classList.remove("darken-background");
+		navMenu.classList.remove("dropped");
+		navMenuBtnBar1.classList.remove("rotate-45");
+		navMenuBtnBar2.classList.remove("rotate-neg-45");
+		navMenuBtnBar3.classList.remove("hidden");
+		isDropped = false;
+	}
+}
 
 
 function onScroll(){
@@ -72,7 +109,7 @@ function addTabToCurrentPage(scrollPos, screenWidth, screenHeight){
 gsap.registerPlugin(ScrollTrigger)
 const timeline = gsap.timeline();
 
-// Header animation \\
+// Header Animation \\
 
 timeline.from(headingName, 1,
 	{
@@ -105,7 +142,6 @@ gsap.from(
 	}
 );
 
-
 // About Description appear Animation \\
 gsap.from(
 	aboutDescription,
@@ -132,7 +168,7 @@ gsap.from(
 			start: "top 90%"
 			// ,markers: true
 		},
-		duration: 2,
+		duration: 1,
 		x: 500,
 		opacity: 0
 	}
@@ -141,11 +177,11 @@ gsap.from(
 
 // About Image Slide-Out Animation \\
 gsap.to(
-	cutoutImageContainer,
+	cutoutImage,
 	{
 		scrollTrigger: {
-			trigger: cutoutImageContainer,
-			toggleActions: "resart none none none",
+			trigger: cutoutImage,
+			toggleActions: "resart none none pause",
 			start: "top 30%",
 			// markers: true
 		},
