@@ -83,32 +83,30 @@ function fixNavToTop(scrollPos, screenWidth, screenHeight){
 //--------------------------------\\
 
 function addTabToCurrentSection(scrollPos, screenWidth, screenHeight){
-	if(screenWidth > 900){
-		if(window.scrollY < screenHeight){
-			homeTab.classList.add("highlighted");
-			aboutTab.classList.remove("highlighted");
-			workTab.classList.remove("highlighted");
-			contactsTab.classList.remove("highlighted");	
-		}
-		else if(window.scrollY >= screenHeight && window.scrollY < screenHeight * 2){
-			homeTab.classList.remove("highlighted");
-			aboutTab.classList.add("highlighted");
-			workTab.classList.remove("highlighted");
-			contactsTab.classList.remove("highlighted");
-			
-		}
-		else if(window.scrollY >= screenHeight * 2 && window.scrollY < screenHeight * 3){
-			homeTab.classList.remove("highlighted");
-			aboutTab.classList.remove("highlighted");
-			workTab.classList.add("highlighted");
-			contactsTab.classList.remove("highlighted");
-		}
-		else if(window.scrollY >= screenHeight * 3){
-			homeTab.classList.remove("highlighted");
-			aboutTab.classList.remove("highlighted");
-			workTab.classList.remove("highlighted");
-			contactsTab.classList.add("highlighted");
-		}
+	if(window.scrollY < screenHeight){
+		homeTab.classList.add("highlighted");
+		aboutTab.classList.remove("highlighted");
+		workTab.classList.remove("highlighted");
+		contactsTab.classList.remove("highlighted");	
+	}
+	else if(window.scrollY >= screenHeight && window.scrollY < screenHeight * 2){
+		homeTab.classList.remove("highlighted");
+		aboutTab.classList.add("highlighted");
+		workTab.classList.remove("highlighted");
+		contactsTab.classList.remove("highlighted");
+		
+	}
+	else if(window.scrollY >= screenHeight * 2 && window.scrollY < screenHeight * 3){
+		homeTab.classList.remove("highlighted");
+		aboutTab.classList.remove("highlighted");
+		workTab.classList.add("highlighted");
+		contactsTab.classList.remove("highlighted");
+	}
+	else if(window.scrollY >= screenHeight * 3){
+		homeTab.classList.remove("highlighted");
+		aboutTab.classList.remove("highlighted");
+		workTab.classList.remove("highlighted");
+		contactsTab.classList.add("highlighted");
 	}
 }
 
