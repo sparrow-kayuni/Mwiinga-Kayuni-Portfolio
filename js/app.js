@@ -1,3 +1,5 @@
+
+// MY CONSTANTS \\
 const navBar = document.querySelector(".navbar");
 const navMenu = document.querySelector(".nav-menu");
 const navMenuBtn = document.querySelector(".nav-menu-btn");
@@ -23,9 +25,11 @@ const cutoutImageContainer = document.querySelector(".cutout-image-container");
 
 window.addEventListener('scroll', onScroll);
 
-var isDropped = false;
+var isDropped = false; // this tracks whether the nav-menu has been dropped
 navMenuBtn.addEventListener('click', showMenu);
 
+// because navLinks is an array of nodes, we can't add event listener directly 
+// so we have to loop through its elements, adding the event listener to each
 for(var i=0; i < navLinks.length; i++){
 	navLinks[i].addEventListener('click', function(){
 		isDropped= true;
@@ -51,10 +55,12 @@ function showMenu(){
 	}
 }
 
-
+// when scrolling we want to:
+// (1.) make sure the navbar stick to the top when it reaches the top of the screen
+// (2.) change the tabs as we are scrolling throught different sections of the page
 function onScroll(){
 	fixNavToTop(window.scrollY, window.innerWidth, window.innerHeight);
-	addTabToCurrentPage(window.scrollY, window.innerWidth, window.innerHeight);
+	addTabToCurrentSection(window.scrollY, window.innerWidth, window.innerHeight);
 }
 
 
@@ -76,7 +82,7 @@ function fixNavToTop(scrollPos, screenWidth, screenHeight){
  //Adding Tabs to Current Section\\
 //--------------------------------\\
 
-function addTabToCurrentPage(scrollPos, screenWidth, screenHeight){
+function addTabToCurrentSection(scrollPos, screenWidth, screenHeight){
 	if(screenWidth > 900){
 		if(window.scrollY < screenHeight){
 			homeTab.classList.add("highlighted");
@@ -176,16 +182,16 @@ gsap.from(
 
 
 // About Image Slide-Out Animation \\
-gsap.to(
-	cutoutImage,
-	{
-		scrollTrigger: {
-			trigger: cutoutImage,
-			toggleActions: "resart none none pause",
-			start: "top 30%",
-			// markers: true
-		},
-		duration: 10,
-		x: -500
-	}
-);
+// gsap.to(
+// 	cutoutImage,
+// 	{
+// 		scrollTrigger: {
+// 			trigger: cutoutImage,
+// 			toggleActions: "resart none none pause",
+// 			start: "top 30%",
+// 			// markers: true
+// 		},
+// 		duration: 10,
+// 		x: -500
+// 	}
+// );
