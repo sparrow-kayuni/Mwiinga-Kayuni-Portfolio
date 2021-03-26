@@ -30,6 +30,11 @@ body{
 .site{
 	font-family: 'Trebuchet MS', sans-serif;
 	overflow-x: hidden;
+	scroll-snap-type: y mandatory;
+}
+
+.site > div{
+	scroll-snap-align: start;
 }
 
 h1, 
@@ -230,13 +235,6 @@ h4{
 	text-decoration: none;
 }
 
-.side-scroll-section{
-	display: flex;
-	position: relative;
-	width: 100%;
-}
-
-
 .about{
 	display: flex;
 	flex: 0 0 100%;
@@ -262,6 +260,11 @@ h4{
 	width: 55%;
 	min-width: 20ch;
 	text-align: justify;
+}
+
+ol{
+	margin: 0.5em 0;
+	list-style-type: circle;
 }
 
 .cutout-image-container{
