@@ -294,8 +294,8 @@ ol{
 .work{
 	flex: 0 0 100%;
 	display: block;
-	height: 100vh;
-	width: 100%;
+	min-height: 100vh;
+	width: 400%;
 	background-color: var(--bg-light-grey);
 }
 

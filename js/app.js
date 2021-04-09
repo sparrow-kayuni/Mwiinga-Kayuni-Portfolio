@@ -11,6 +11,7 @@ const homeTab = document.querySelector(".menu-item:nth-child(1)");
 const aboutTab = document.querySelector(".menu-item:nth-child(2)");
 const workTab = document.querySelector(".menu-item:nth-child(3)");
 const contactsTab = document.querySelector(".menu-item:nth-child(4)");
+const workSection = document.querySelector(".work")
 const headingName =  document.querySelector(".name");
 const headingTitles =  document.querySelector(".titles");
 const aboutHeading = document.querySelector(".about-heading");
@@ -83,12 +84,12 @@ function fixNavToTop(scrollPos, screenWidth, screenHeight){
 				navMenu.classList.remove("light-grey-background");
 				navMenu.classList.remove("dark-grey-background");
 			}
-			if(window.scrollY >= screenHeight * 2 && window.scrollY < screenHeight * 3){
+			if(window.scrollY >= screenHeight * 2 && window.scrollY < screenHeight * 5){
 				navMenu.classList.add("light-grey-background");
 				navMenu.classList.remove("mid-grey-background");
 				navMenu.classList.remove("dark-grey-background");
 			}
-			if(window.scrollY >= screenHeight * 3){
+			if(window.scrollY >= screenHeight * 5){
 				navMenu.classList.add("dark-grey-background");
 				navMenu.classList.remove("light-grey-background");
 				navMenu.classList.remove("mid-grey-background");
@@ -114,13 +115,13 @@ function addTabToCurrentSection(scrollPos, screenWidth, screenHeight){
 		workTab.classList.remove("highlighted");
 		contactsTab.classList.remove("highlighted");
 	}
-	else if(window.scrollY >= screenHeight * 2 && window.scrollY < screenHeight * 3){
+	else if(window.scrollY >= screenHeight * 2 && window.scrollY < screenHeight * 5){
 		homeTab.classList.remove("highlighted");
 		aboutTab.classList.remove("highlighted");
 		workTab.classList.add("highlighted");
 		contactsTab.classList.remove("highlighted");
 	}
-	else if(window.scrollY >= screenHeight * 3){
+	else if(window.scrollY >= screenHeight * 5){
 		homeTab.classList.remove("highlighted");
 		aboutTab.classList.remove("highlighted");
 		workTab.classList.remove("highlighted");
@@ -174,8 +175,9 @@ gsap.from(
 			start: "top bottom"
 			// ,markers: true
 		},
-		duration: 2,
-		opacity: 0
+		duration: 1,
+		opacity: 0,
+		y: 200
 	}
 );
 
@@ -195,19 +197,3 @@ gsap.from(
 		opacity: 0
 	}
 );
-
-
-// About Image Slide-Out Animation \\
-// gsap.to(
-// 	cutoutImage,
-// 	{
-// 		scrollTrigger: {
-// 			trigger: cutoutImage,
-// 			toggleActions: "resart none none pause",
-// 			start: "top 30%",
-// 			// markers: true
-// 		},
-// 		duration: 10,
-// 		x: -500
-// 	}
-// );
