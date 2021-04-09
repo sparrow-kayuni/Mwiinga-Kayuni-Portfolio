@@ -84,12 +84,12 @@ function fixNavToTop(scrollPos, screenWidth, screenHeight){
 				navMenu.classList.remove("light-grey-background");
 				navMenu.classList.remove("dark-grey-background");
 			}
-			if(window.scrollY >= screenHeight * 2 && window.scrollY < screenHeight * 5){
+			if(window.scrollY >= screenHeight * 2 && window.scrollY < screenHeight * 3){
 				navMenu.classList.add("light-grey-background");
 				navMenu.classList.remove("mid-grey-background");
 				navMenu.classList.remove("dark-grey-background");
 			}
-			if(window.scrollY >= screenHeight * 5){
+			if(window.scrollY >= screenHeight * 3){
 				navMenu.classList.add("dark-grey-background");
 				navMenu.classList.remove("light-grey-background");
 				navMenu.classList.remove("mid-grey-background");
@@ -115,13 +115,13 @@ function addTabToCurrentSection(scrollPos, screenWidth, screenHeight){
 		workTab.classList.remove("highlighted");
 		contactsTab.classList.remove("highlighted");
 	}
-	else if(window.scrollY >= screenHeight * 2 && window.scrollY < screenHeight * 5){
+	else if(window.scrollY >= screenHeight * 2 && window.scrollY < screenHeight * 3){
 		homeTab.classList.remove("highlighted");
 		aboutTab.classList.remove("highlighted");
 		workTab.classList.add("highlighted");
 		contactsTab.classList.remove("highlighted");
 	}
-	else if(window.scrollY >= screenHeight * 5){
+	else if(window.scrollY >= screenHeight * 3){
 		homeTab.classList.remove("highlighted");
 		aboutTab.classList.remove("highlighted");
 		workTab.classList.remove("highlighted");
