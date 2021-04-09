@@ -64,7 +64,8 @@ h4{
 	height: 30em;
 	width: 40em;
 	background-color: transparent;
-	background-image: url(file:///C:/Users/Mwiinga/Python/Web/MK%20Portfolio/images/mk_logo_black.png);
+	background-image:url(https://images/mk_logo_black.png),
+		url(file:///C:/Users/Mwiinga/Python/Web/MK%20Portfolio/images/mk_logo_black.png);
 	background-blend-mode: lighten;
 	background-size: contain;
 	background-repeat: no-repeat;
