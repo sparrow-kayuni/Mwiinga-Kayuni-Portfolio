@@ -13,7 +13,8 @@
 	font-family: 'Trebuchet MS';
 	font-style: normal;
 	font-weight: normal;
-	src:url('file:///C:/Users/Mwiinga/Python/Web/MK%20Portfolio/fonts/trebuc.woff') format('woff');
+	src:url('http://mwiingakayuni.ml/fonts/trebuc.woff') format('woff'),
+		url('file:///C:/Users/Mwiinga/Python/Web/MK%20Portfolio/fonts/trebuc.woff') format('woff');
 }
 
 *{
